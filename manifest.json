@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "WA Blur",
+  "version": "1.0.0",
+  "description": "Blur nama, pesan terbuka, dan preview sidebar WhatsApp Web. Hover untuk buka.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "css/messages.css",
+        "css/messagesPreview.css",
+        "css/name.css"
+      ],
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "WA Blur"
+  }
+}
